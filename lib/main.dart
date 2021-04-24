@@ -1,8 +1,9 @@
-import 'package:discover_socialmedia/screens/home_screen.dart';
+import 'package:discover/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -55,15 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (id) => id != 2 ? setState(() => _currentIndex = id) : '',
+        elevation: 0,
+        currentIndex: _currentIndex,
+        items: _bottomNavItems,
+        type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedIconTheme: IconThemeData(color: CupertinoColors.darkBackgroundGray, size: 28),
         unselectedIconTheme: IconThemeData(color: CupertinoColors.inactiveGray, size: 28),
-        elevation: 0,
         backgroundColor: CupertinoColors.extraLightBackgroundGray,
-        type: BottomNavigationBarType.fixed,
-        items: _bottomNavItems,
+        onTap: (id) => id != 2 ? setState(() => _currentIndex = id) : '',
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(

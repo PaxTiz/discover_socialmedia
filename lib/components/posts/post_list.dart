@@ -1,5 +1,6 @@
-import 'package:discover_socialmedia/components/posts/post_list_item.dart';
 import 'package:flutter/material.dart';
+
+import 'post_list_item.dart';
 
 class PostList extends StatelessWidget {
   @override
