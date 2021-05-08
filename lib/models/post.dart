@@ -66,6 +66,36 @@ class Post {
           user: User.mocked.first,
           date: DateTime.now(),
         ),
+        Comment(
+          text:
+              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+          user: User.mocked.first,
+          date: DateTime.now(),
+        ),
+        Comment(
+          text:
+              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+          user: User.mocked.first,
+          date: DateTime.now(),
+        ),
+        Comment(
+          text:
+              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+          user: User.mocked.first,
+          date: DateTime.now(),
+        ),
+        Comment(
+          text:
+              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+          user: User.mocked.first,
+          date: DateTime.now(),
+        ),
+        Comment(
+          text:
+              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+          user: User.mocked.first,
+          date: DateTime.now(),
+        ),
       ],
       user: User.mocked.first,
       date: DateTime.now(),
