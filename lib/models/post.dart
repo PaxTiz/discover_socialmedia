@@ -75,7 +75,7 @@ class Post {
       description:
           "Yay this is the description of my first post haha, I hope you guys liked it ! 😇",
       image:
-          "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/a/e/bae8edbcb1_97484_eau-salee-mers-oceans.jpg",
+          "https://ec.europa.eu/jrc/sites/jrcsh/files/styles/normal-responsive/public/fotolia-92027264european-day-forest-green-forest.jpg",
       liked: false,
       likes: 247,
       commented: false,
@@ -101,8 +101,7 @@ class Post {
       id: 2,
       description:
           "Yay this is the description of my first post haha, I hope you guys liked it ! 😇",
-      image:
-          "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/a/e/bae8edbcb1_97484_eau-salee-mers-oceans.jpg",
+      image: "https://uiaa-web.azureedge.net/wp-content/uploads/2017/11/RTM19-banner-web.jpg",
       liked: false,
       likes: 247,
       commented: false,
@@ -128,8 +127,7 @@ class Post {
       id: 3,
       description:
           "Yay this is the description of my first post haha, I hope you guys liked it ! 😇",
-      image:
-          "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/a/e/bae8edbcb1_97484_eau-salee-mers-oceans.jpg",
+      image: "https://www.conservation-nature.fr/wp-content/uploads/2020/10/desert.jpg",
       liked: false,
       likes: 247,
       commented: false,

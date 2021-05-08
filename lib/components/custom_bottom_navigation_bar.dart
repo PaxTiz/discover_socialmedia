@@ -43,8 +43,11 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 .asMap()
                 .entries
                 .map((e) => IconButton(
-                      icon: Icon(e.value,
-                          color: currentIndex == e.key ? selectedColor : unselectedColor),
+                      icon: Icon(
+                        e.value,
+                        size: 28,
+                        color: currentIndex == e.key ? selectedColor : unselectedColor,
+                      ),
                       onPressed: () => onClick(e.key),
                     ))
                 .toList(),

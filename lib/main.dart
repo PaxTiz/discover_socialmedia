@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _screens = [
       HomeScreen(),
       Center(child: Text("Messages")),
-      Center(),
+      Center(child: Text("New post")),
       Center(child: Text("Notifications")),
       Center(child: Text("Profile")),
     ];
@@ -71,11 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: CupertinoColors.extraLightBackgroundGray,
         selectedColor: Colors.black,
         unselectedColor: Colors.black.withOpacity(.4),
-        onClick: (id) => id != 2 ? setState(() => _currentIndex = id) : '',
+        onClick: (id) => setState(() => _currentIndex = id),
         items: [
           CupertinoIcons.home,
           CupertinoIcons.chat_bubble_2,
-          CupertinoIcons.home,
+          CupertinoIcons.plus_app,
           CupertinoIcons.bell,
           CupertinoIcons.person,
         ],
