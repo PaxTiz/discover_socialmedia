@@ -22,6 +22,8 @@ class Post {
 
   final User user;
 
+  final DateTime date;
+
   Post({
     required this.id,
     required this.description,
@@ -33,7 +35,12 @@ class Post {
     required this.reposts,
     required this.comments,
     required this.user,
+    required this.date,
   });
+
+  String get timeAgo {
+    return "${date.day} / ${date.month} / ${date.year}";
+  }
 
   static final mocked = [
     Post(
@@ -48,9 +55,20 @@ class Post {
       reposted: false,
       reposts: 33,
       comments: [
-        Comment(text: "Yay my first comment :)", user: User.mocked.first),
+        Comment(
+          text: "Yay my first comment :)",
+          user: User.mocked.first,
+          date: DateTime.now().subtract(Duration(days: 2)),
+        ),
+        Comment(
+          text:
+              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+          user: User.mocked.first,
+          date: DateTime.now(),
+        ),
       ],
       user: User.mocked.first,
+      date: DateTime.now(),
     )
   ];
 }

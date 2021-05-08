@@ -5,5 +5,11 @@ class Comment {
 
   final User user;
 
-  Comment({required this.text, required this.user});
+  final DateTime date;
+
+  Comment({required this.text, required this.user, required this.date});
+
+  String get timeAgo {
+    return "${date.day} / ${date.month} / ${date.year}";
+  }
 }

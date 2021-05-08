@@ -1,3 +1,4 @@
+import 'package:discover/components/comments/comment_item.dart';
 import 'package:discover/components/posts/post_actions_row.dart';
 import 'package:discover/models/post.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class PostDetails extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '10min ago',
+                            post.timeAgo,
                             style: TextStyle(
                               color: Colors.grey,
                             ),
@@ -80,6 +81,14 @@ class PostDetails extends StatelessWidget {
                 )
               ],
             ),
+          ),
+
+          // About: Post comments
+          ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
+            children: post.comments.map((e) => CommentItem(comment: e)).toList(),
           ),
         ],
       ),
