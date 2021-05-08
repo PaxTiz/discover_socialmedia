@@ -4,6 +4,7 @@ import 'package:discover/screens/posts/post_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'components/custom_bottom_navigation_bar.dart';
 import 'models/post.dart';
 
 void main() {
@@ -45,22 +46,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late final _bottomNavItems;
   late final _screens;
   int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _bottomNavItems = [
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: "Home"),
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.chat_bubble_2), label: "Messages"),
-      BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.chat_bubble_2, color: Colors.transparent), label: ""),
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.bell), label: "Notifications"),
-      BottomNavigationBarItem(icon: Icon(CupertinoIcons.person), label: "Profile"),
-    ];
-
     _screens = [
       HomeScreen(),
       Center(child: Text("Messages")),
@@ -74,23 +65,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
+      extendBody: true,
+      bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
-        items: _bottomNavItems,
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedIconTheme: IconThemeData(color: CupertinoColors.darkBackgroundGray, size: 28),
-        unselectedIconTheme: IconThemeData(color: CupertinoColors.inactiveGray, size: 28),
         backgroundColor: CupertinoColors.extraLightBackgroundGray,
-        onTap: (id) => id != 2 ? setState(() => _currentIndex = id) : '',
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).pushNamed(PostCreate.route),
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        selectedColor: Colors.black,
+        unselectedColor: Colors.black.withOpacity(.4),
+        onClick: (id) => id != 2 ? setState(() => _currentIndex = id) : '',
+        items: [
+          CupertinoIcons.home,
+          CupertinoIcons.chat_bubble_2,
+          CupertinoIcons.home,
+          CupertinoIcons.bell,
+          CupertinoIcons.person,
+        ],
       ),
     );
   }
