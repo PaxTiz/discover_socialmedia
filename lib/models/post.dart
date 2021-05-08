@@ -41,7 +41,7 @@ class Post {
       description:
           "Yay this is the description of my first post haha, I hope you guys liked it ! 😇",
       image:
-          "https://www.mer-ocean.com/wp-content/uploads/2018/08/shifaaz-shamoon-370863-unsplash-e1533303603417-1024x576.jpg",
+          "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/a/e/bae8edbcb1_97484_eau-salee-mers-oceans.jpg",
       liked: false,
       likes: 247,
       commented: false,

@@ -45,11 +45,17 @@ class PostListItem extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 8),
-              GestureDetector(
-                onTap: () => Navigator.of(context).pushNamed(PostDetails.route, arguments: post),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.network(post.image),
+              Hero(
+                tag: "post_${post.id}",
+                child: Material(
+                  child: InkWell(
+                    onTap: () =>
+                        Navigator.of(context).pushNamed(PostDetails.route, arguments: post),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.network(post.image),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 8),

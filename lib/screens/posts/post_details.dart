@@ -19,13 +19,16 @@ class PostDetails extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(32),
-              bottomRight: Radius.circular(32),
+          Hero(
+            tag: "post_${post.id}",
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(32),
+                bottomRight: Radius.circular(32),
+              ),
+              child: Image.network(post.image,
+                  height: MediaQuery.of(context).size.height / 3, fit: BoxFit.cover),
             ),
-            child: Image.network(post.image,
-                height: MediaQuery.of(context).size.height / 3, fit: BoxFit.cover),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
