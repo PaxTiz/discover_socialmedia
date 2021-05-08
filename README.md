@@ -1,6 +1,15 @@
-# discover_socialmedia
+# Discover - Social media UI
 
-A new Flutter application.
+A simple social media UI based on a very cool design
+
+## Initial design
+
+![Initial design found on Internet](base.png "Initial design")
+
+## My design
+
+<img title="My design" src="my-design.png" alt="My design" width="250">
+<img title="My design" src="my-design2.png" alt="My design" width="250">
 
 ## Getting Started
 
