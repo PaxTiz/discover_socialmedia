@@ -1,6 +1,10 @@
 import 'package:discover/screens/home_screen.dart';
+import 'package:discover/screens/posts/post_create.dart';
+import 'package:discover/screens/posts/post_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'models/post.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +19,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      onGenerateRoute: (settings) {
+        final Widget widget;
+        switch (settings.name) {
+          case PostCreate.route:
+            widget = PostCreate();
+            break;
+          case PostDetails.route:
+            widget = PostDetails(post: settings.arguments as Post);
+            break;
+          default:
+            widget = Text('Empty');
+        }
+
+        return CupertinoPageRoute(builder: (ctx) => widget);
+      },
       home: MyHomePage(),
     );
   }
@@ -69,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Navigator.of(context).pushNamed(PostCreate.route),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

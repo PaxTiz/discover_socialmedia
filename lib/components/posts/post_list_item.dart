@@ -1,7 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:discover/components/posts/post_actions_row.dart';
+import 'package:discover/models/post.dart';
+import 'package:discover/screens/posts/post_details.dart';
 import 'package:flutter/material.dart';
 
 class PostListItem extends StatelessWidget {
+  final Post post;
+  const PostListItem({required this.post});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,24 +16,21 @@ class PostListItem extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://mpng.subpng.com/20180326/wzw/kisspng-computer-icons-user-profile-avatar-female-profile-5ab915f791e2c1.8067312315220792235976.jpg"),
-                  ),
+                  CircleAvatar(backgroundImage: NetworkImage(post.user.image)),
                   SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Michael Bruno",
+                          post.user.fullName,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
                         ),
                         Text(
-                          "Traveler, life laver",
+                          post.user.description,
                           style: TextStyle(
                             fontSize: 12,
                           ),
@@ -43,32 +45,15 @@ class PostListItem extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 8),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Image.network(
-                  "https://www.mer-ocean.com/wp-content/uploads/2018/08/shifaaz-shamoon-370863-unsplash-e1533303603417-1024x576.jpg",
+              GestureDetector(
+                onTap: () => Navigator.of(context).pushNamed(PostDetails.route, arguments: post),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.network(post.image),
                 ),
               ),
               SizedBox(height: 8),
-              Row(
-                children: [
-                  Row(
-                    children: [Icon(CupertinoIcons.heart), SizedBox(width: 8), Text("247")],
-                  ),
-                  SizedBox(width: 32),
-                  Row(
-                    children: [Icon(CupertinoIcons.chat_bubble), SizedBox(width: 8), Text("57")],
-                  ),
-                  SizedBox(width: 32),
-                  Row(
-                    children: [
-                      Icon(CupertinoIcons.arrowshape_turn_up_right),
-                      SizedBox(width: 8),
-                      Text("33")
-                    ],
-                  ),
-                ],
-              ),
+              PostActionRow(post: post),
             ],
           ),
         )

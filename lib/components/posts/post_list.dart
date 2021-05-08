@@ -1,3 +1,4 @@
+import 'package:discover/models/post.dart';
 import 'package:flutter/material.dart';
 
 import 'post_list_item.dart';
@@ -9,10 +10,10 @@ class PostList extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       children: List.generate(
-          8,
-          (_) => Padding(
+          Post.mocked.length,
+          (i) => Padding(
                 padding: EdgeInsets.only(bottom: 16),
-                child: PostListItem(),
+                child: PostListItem(post: Post.mocked[i]),
               )),
     );
   }
