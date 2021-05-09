@@ -60,6 +60,11 @@ class CommentItem extends StatelessWidget {
                   ),
                   actions: [
                     CupertinoContextMenuAction(
+                      isDefaultAction: true,
+                      trailingIcon: CupertinoIcons.heart,
+                      child: Text("Like"),
+                    ),
+                    CupertinoContextMenuAction(
                       trailingIcon: CupertinoIcons.pen,
                       child: Text("Edit"),
                     ),
