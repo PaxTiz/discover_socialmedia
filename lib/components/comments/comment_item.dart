@@ -1,4 +1,5 @@
 import 'package:discover/models/comment.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CommentItem extends StatelessWidget {
@@ -10,6 +11,7 @@ class CommentItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
+        color: Colors.white,
         border: Border(bottom: BorderSide(color: Colors.grey.withOpacity(.5), width: 1)),
       ),
       child: Row(
@@ -40,11 +42,34 @@ class CommentItem extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 8),
-                Text(
-                  comment.text,
-                  softWrap: true,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(height: 1.2),
-                ),
+                CupertinoContextMenu(
+                  previewBuilder: (context, animation, child) => DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: child,
+                    ),
+                  ),
+                  child: Text(
+                    comment.text,
+                    softWrap: true,
+                    style: Theme.of(context).textTheme.headline6?.copyWith(height: 1.2),
+                  ),
+                  actions: [
+                    CupertinoContextMenuAction(
+                      trailingIcon: CupertinoIcons.pen,
+                      child: Text("Edit"),
+                    ),
+                    CupertinoContextMenuAction(
+                      isDestructiveAction: true,
+                      trailingIcon: CupertinoIcons.trash,
+                      child: Text("Delete"),
+                    ),
+                  ],
+                )
               ],
             ),
           )
