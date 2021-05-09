@@ -36,7 +36,7 @@ class StoryListItem extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 8),
-              Text("James Bruno")
+              Text("James Bruno", style: Theme.of(context).textTheme.headline1),
             ],
           ),
         ],

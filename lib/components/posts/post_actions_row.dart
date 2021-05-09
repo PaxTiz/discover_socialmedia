@@ -14,7 +14,10 @@ class PostActionRow extends StatelessWidget {
           children: [
             Icon(CupertinoIcons.heart),
             SizedBox(width: 8),
-            Text(post.likes.toString(), style: TextStyle(fontWeight: FontWeight.bold))
+            Text(post.likes.toString(),
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ))
           ],
         ),
         SizedBox(width: 32),
@@ -22,7 +25,10 @@ class PostActionRow extends StatelessWidget {
           children: [
             Icon(CupertinoIcons.chat_bubble),
             SizedBox(width: 8),
-            Text(post.comments.length.toString(), style: TextStyle(fontWeight: FontWeight.bold))
+            Text(post.comments.length.toString(),
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ))
           ],
         ),
         SizedBox(width: 32),
@@ -30,7 +36,10 @@ class PostActionRow extends StatelessWidget {
           children: [
             Icon(CupertinoIcons.arrowshape_turn_up_right),
             SizedBox(width: 8),
-            Text(post.reposts.toString(), style: TextStyle(fontWeight: FontWeight.bold))
+            Text(post.reposts.toString(),
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ))
           ],
         ),
       ],

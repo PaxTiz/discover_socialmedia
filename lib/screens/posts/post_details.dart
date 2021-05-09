@@ -63,21 +63,20 @@ class PostDetails extends StatelessWidget {
                           children: [
                             Text(
                               post.user.fullName,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
+                              style: Theme.of(context).textTheme.headline1,
                             ),
                             Text(
                               post.timeAgo,
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
+                              style: Theme.of(context).textTheme.headline6,
                             ),
                           ],
                         ),
                         SizedBox(height: 8),
-                        Text(post.description, softWrap: true),
+                        Text(
+                          post.description,
+                          softWrap: true,
+                          style: Theme.of(context).textTheme.headline6,
+                        ),
                       ],
                     ),
                   )
@@ -101,6 +100,9 @@ class PostDetails extends StatelessWidget {
         padding: EdgeInsets.only(top: 16, left: 16, right: 16, bottom: 48),
         color: Colors.black.withOpacity(.05),
         child: CupertinoTextField(
+          placeholderStyle: Theme.of(context).textTheme.headline6,
+          textAlignVertical: TextAlignVertical.center,
+          style: Theme.of(context).textTheme.headline6,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: Colors.white,

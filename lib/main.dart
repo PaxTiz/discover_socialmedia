@@ -19,6 +19,26 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: "Casper",
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontFamily: "ColorTube",
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: CupertinoColors.darkBackgroundGray,
+          ),
+        ),
+        textTheme: TextTheme(
+            headline1: TextStyle(
+              fontFamily: "ColorTube",
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+            headline6: TextStyle(
+              fontSize: 14,
+              color: Colors.black.withOpacity(.8),
+            )),
       ),
       onGenerateRoute: (settings) {
         final Widget widget;

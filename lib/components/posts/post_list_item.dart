@@ -24,16 +24,11 @@ class PostListItem extends StatelessWidget {
                       children: [
                         Text(
                           post.user.fullName,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                          style: Theme.of(context).textTheme.headline1,
                         ),
                         Text(
                           post.user.description,
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
+                          style: Theme.of(context).textTheme.headline6,
                         ),
                       ],
                     ),

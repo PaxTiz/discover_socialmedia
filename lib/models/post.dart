@@ -56,13 +56,14 @@ class Post {
       reposts: 33,
       comments: [
         Comment(
-          text: "Yay my first comment :)",
+          text:
+              "This is a very long comment. I don't known how many long it is but I think nobody can do better than me ! Please.. tell me I'm the best in the world otherwise I'll cry :(",
           user: User.mocked.first,
           date: DateTime.now().subtract(Duration(days: 2)),
         ),
         Comment(
           text:
-              "Wow this post is just amazing, I'm so proud of you and your evolution on Discover !",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et euismod tortor, sit amet varius nisi. Donec dolor tellus, imperdiet at quam ac, hendrerit interdum magna. Phasellus egestas posuere eros, et viverra neque porta non. Mauris a tincidunt nibh. Quisque ut purus dui. Nunc imperdiet, risus vel suscipit iaculis, justo arcu maximus turpis, et molestie massa est non elit. Donec tincidunt vehicula metus quis sagittis. Fusce metus nulla, auctor ac ex quis, dictum malesuada orci.",
           user: User.mocked.first,
           date: DateTime.now(),
         ),

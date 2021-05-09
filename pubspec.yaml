@@ -60,6 +60,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Casper
+      fonts:
+        - asset: assets/fonts/Casper/Casper-Regular.ttf
+        - asset: assets/fonts/Casper/Casper-Bold.ttf
+          weight: 700
+    - family: ColorTube
+      fonts:
+        - asset: assets/fonts/ColorTube/ColorTube-Regular.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

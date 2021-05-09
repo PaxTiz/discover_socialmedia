@@ -12,14 +12,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         centerTitle: false,
-        title: Text(
-          "Discover.",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 32,
-            color: CupertinoColors.darkBackgroundGray,
-          ),
-        ),
+        title: Text("Discover.", style: Theme.of(context).appBarTheme.titleTextStyle),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),

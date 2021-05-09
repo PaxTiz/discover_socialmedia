@@ -31,21 +31,20 @@ class CommentItem extends StatelessWidget {
                   children: [
                     Text(
                       comment.user.fullName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
+                      style: Theme.of(context).textTheme.headline1,
                     ),
                     Text(
                       comment.timeAgo,
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ],
                 ),
                 SizedBox(height: 8),
-                Text(comment.text, softWrap: true),
+                Text(
+                  comment.text,
+                  softWrap: true,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(height: 1.2),
+                ),
               ],
             ),
           )
